@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: #0b0b0b;
+  color: #ffffff;
+}
+
+section {
+  padding: 80px 10%;
+}
+
+.hero h1 {
+  font-size: 72px;
+  line-height: 1;
+  margin: 0;
+}
+
+.hero span {
+  color: #ff6a00;
+}
+
+.hero p {
+  max-width: 500px;
+  opacity: 0.8;
+}
+
+.sub {
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 700px;
+  opacity: 0.75;
+}
+
+.days .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #151515;
+  padding: 30px;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.card span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.5;
+  margin-top: 6px;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.videos .links a {
+  display: inline-block;
+  margin-right: 20px;
+  color: #ff6a00;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer {
+  padding: 40px 10%;
+  border-top: 1px solid #222;
+  font-size: 14px;
+  opacity: 0.6;
+}
