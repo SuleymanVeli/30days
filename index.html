@@ -1,62 +1,59 @@
 <!DOCTYPE html>
 <html lang="az">
-
 <head>
-    <meta charset="UTF-8" />
-    <title>30 Gün / 30 Oyun</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>30 Gün / 30 Oyun</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1>30 Gün<br><span>30 Oyun</span></h1>
-        <p>JavaScript · 2D / 3D · Daily Game Challenge</p>
-        <p class="sub">Hər gün 1 oyun — proses video ilə paylaşılır</p>
-    </section>
+<header class="hero">
+  <div class="badge">🎮 JavaScript Challenge</div>
+  <h1>
+  30 Gün.<br>
+  <span id="typing"></span>
+</h1>
+<p>Hər gün 1 oyun. Proses video ilə paylaşılır.</p>
+  <a href="#days" class="cta">Challenge-i izlə ↓</a>
+</header>
 
-    <!-- ABOUT -->
-    <section class="about">
-        <h2>Challenge haqqında</h2>
-        <p>
-            Bu layihə 30 gün ərzində JavaScript istifadə edərək hazırlanacaq
-            30 mini oyundan ibarətdir. Məqsəd mükəmməllik yox, davamlılıq,
-            öyrənmə və real vaxtda inkişafı paylaşmaqdır.
-        </p>
-    </section>
+<section class="info">
+  <h2>Nə baş verir?</h2>
+  <p>
+    30 gün ərzində JavaScript ilə mini oyunlar hazırlanır.
+    Məqsəd sürət, öyrənmə və real prosesin paylaşılmasıdır.
+  </p>
+</section>
 
-    <!-- DAYS GRID -->
-    <section class="days">
-        <h2>Günlər</h2>
-        <div class="grid">
-            <!-- Placeholder cards -->
-            <div class="card">Day 01<br><span>Coming Soon</span></div>
-            <div class="card">Day 02<br><span>Coming Soon</span></div>
-            <div class="card">Day 03<br><span>Coming Soon</span></div>
-            <div class="card">...</div>
-            <div class="card">Day 30<br><span>Final Game</span></div>
-        </div>
-    </section>
+<section id="days" class="days">
+  <h2>Günlər</h2>
 
-    <!-- VIDEOS -->
-    <section class="videos">
-        <h2>Videolar</h2>
-        <p>Challenge boyunca bütün oyunlar video formatında paylaşılacaq:</p>
+  <div class="days-list">
+    <div class="day">Day 01 <span>Video coming</span></div>
+    <div class="day">Day 02 <span>Video coming</span></div>
+    <div class="day">Day 03 <span>Video coming</span></div>
+    <div class="day locked">Day 04 🔒</div>
+    <div class="day locked">...</div>
+    <div class="day final">Day 30 <span>Final Game</span></div>
+  </div>
+</section>
 
-        <div class="links">
-            <a href="#" target="_blank">YouTube</a>
-            <a href="#" target="_blank">TikTok</a>
-            <a href="#" target="_blank">Instagram Reels</a>
-        </div>
-    </section>
+<section class="video">
+  <h2>Harada paylaşılır?</h2>
+  <p>Bütün oyunlar video formatında:</p>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2025 · 30 Gün / 30 Oyun</p>
-        <p>Built with JavaScript</p>
-    </footer>
+  <div class="socials">
+    <a href="#">YouTube</a>
+    <a href="#">TikTok</a>
+    <a href="#">Instagram</a>
+  </div>
+</section>
 
+<footer>
+  <p>© 2025 · 30 Gün / 30 Oyun</p>
+</footer>
+
+<script src="./script.js" ></script>
 </body>
-
 </html>

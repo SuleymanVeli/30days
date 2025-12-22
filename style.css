@@ -4,81 +4,142 @@
 
 body {
   margin: 0;
-  font-family: Inter, system-ui, sans-serif;
-  background: #0b0b0b;
-  color: #ffffff;
+  font-family: system-ui, sans-serif;
+  background: radial-gradient(circle at top, #1a1a1a, #050505);
+  color: #fff;
 }
 
-section {
-  padding: 80px 10%;
+/* HERO */
+.hero {
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.badge {
+  display: inline-block;
+  background: #222;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-bottom: 16px;
 }
 
 .hero h1 {
-  font-size: 72px;
+  font-size: 52px;
   line-height: 1;
   margin: 0;
 }
 
 .hero span {
-  color: #ff6a00;
+  background: linear-gradient(90deg, #ff6a00, #ffb347);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero p {
-  max-width: 500px;
+  margin: 16px 0;
   opacity: 0.8;
 }
 
-.sub {
-  font-size: 14px;
-  opacity: 0.6;
+.cta {
+  margin-top: 20px;
+  text-decoration: none;
+  color: #000;
+  background: #ff6a00;
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
 }
 
-h2 {
-  margin-bottom: 20px;
+/* INFO */
+.info,
+.video {
+  padding: 48px 24px;
 }
 
-.about p {
-  max-width: 700px;
+.info p {
   opacity: 0.75;
 }
 
-.days .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
+/* DAYS */
+.days {
+  padding: 48px 24px;
 }
 
-.card {
-  background: #151515;
-  padding: 30px;
-  text-align: center;
-  border-radius: 6px;
-  font-size: 18px;
-  transition: transform 0.3s;
+.days-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.card span {
+.day {
+  background: #141414;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.day span {
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+.day.locked {
+  opacity: 0.4;
+}
+
+.day.final {
+  border: 1px solid #ff6a00;
+}
+
+/* SOCIALS */
+.socials a {
   display: block;
+  margin-top: 12px;
+  text-decoration: none;
+  background: #1f1f1f;
+  padding: 14px;
+  border-radius: 12px;
+  color: #ff6a00;
+  text-align: center;
+}
+
+/* FOOTER */
+footer {
+  padding: 24px;
+  text-align: center;
   font-size: 12px;
   opacity: 0.5;
-  margin-top: 6px;
 }
 
-.card:hover {
-  transform: translateY(-6px);
+
+#typing {
+  background: linear-gradient(90deg, #ff6a00, #ffb347);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-right: 2px solid #ff6a00;
+  padding-right: 6px;
+  animation: blink 0.8s infinite;
 }
 
-.videos .links a {
-  display: inline-block;
-  margin-right: 20px;
-  color: #ff6a00;
-  text-decoration: none;
-  font-weight: 500;
+@keyframes blink {
+  0%, 50% { border-color: transparent; }
+  100% { border-color: #ff6a00; }
 }
 
-footer {
-  padding: 40px 10%;
-  border-top: 1px solid #222;
-  font-size: 14px;
-  opacity: 0.6;
+/* DESKTOP */
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 72px;
+  }
+
+  .days-list {
+    max-width: 600px;
+  }
 }
