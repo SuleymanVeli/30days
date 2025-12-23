@@ -1,8 +1,6 @@
-const texts = [
-  "30 Oyun.",
-  "JavaScript Challenge.",
-  "2D & 3D Games.",
-  "Every Day. No Excuses."
+const texts = [  
+  "Gün",
+  "Oyun" 
 ];
 
 let textIndex = 0;
@@ -18,7 +16,7 @@ function typeLoop() {
     charIndex++;
 
     if (charIndex === currentText.length) {
-      setTimeout(() => isDeleting = true, 1200);
+      setTimeout(() => isDeleting = true, 1000);
     }
   } else {
     typingElement.textContent = currentText.slice(0, charIndex - 1);

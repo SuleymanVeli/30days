@@ -2,11 +2,28 @@
   box-sizing: border-box;
 }
 
+:root {
+  --dark-purple-color: #13014a;
+  --purple-color: #3c228a;
+  --light-blue-color: #a8b7e9;
+  --white-color: #ffffff;
+  --volt-color: #eaf100;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  /* 1100–1280 arası idealdır */
+  margin: 0 auto;
+  padding: 0 70px;
+  /* mobile safe padding */
+}
+
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  background: radial-gradient(circle at top, #1a1a1a, #050505);
-  color: #fff;
+  background: #fff;
+  color: #13014a;
 }
 
 /* HERO */
@@ -14,46 +31,89 @@ body {
   min-height: 100vh;
   padding: 24px;
   display: flex;
+  align-items: center;
+}
+
+/* INNER WRAPPER */
+.hero-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* MOBILE: yuxarı-aşağı */
+  gap: 40px;
 }
 
-.badge {
-  display: inline-block;
-  background: #222;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 12px;
-  margin-bottom: 16px;
+.hero-content {
+  min-width: 100px;
 }
 
-.hero h1 {
-  font-size: 52px;
-  line-height: 1;
+/* SOL HİSSƏ */
+.hero-content h1 {
+  font-size: 42px;
+  line-height: 1.1;
   margin: 0;
 }
 
-.hero span {
-  background: linear-gradient(90deg, #ff6a00, #ffb347);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero p {
+.hero-content p {
   margin: 16px 0;
   opacity: 0.8;
+  max-width: 420px;
 }
 
 .cta {
+  display: inline-block;
   margin-top: 20px;
   text-decoration: none;
   color: #000;
   background: #ff6a00;
-  padding: 14px;
+  padding: 14px 20px;
   border-radius: 12px;
-  text-align: center;
   font-weight: 600;
 }
+
+/* MEDIA WRAPPER */
+.media {
+  width: 100%;
+  max-width: 500px;
+
+  aspect-ratio: 1 / 1;
+  /* kvadrat – istəsən 16/9 edə bilərsən */
+  border-radius: 20px;
+  overflow: hidden;
+
+  /* Game style shadow */
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+
+  background: #000;
+  /* GIF yüklənənə qədər */
+}
+
+/* GIF özü */
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* SAĞ HİSSƏ */
+.hero-visual {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+
+
 
 /* INFO */
 .info,
@@ -66,36 +126,66 @@ body {
 }
 
 /* DAYS */
-.days {
-  padding: 48px 24px;
-}
 
-.days-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.day {
-  background: #141414;
+.days-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  /* mobile: 1 column */
+  gap: 16px;
   padding: 16px;
-  border-radius: 12px;
+}
+
+.day-card {
+  aspect-ratio: 1 / 1;
+  /* əsas hissə */
+  background: #e5e7eb;
   display: flex;
-  justify-content: space-between;
-  font-size: 16px;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 12px;
 }
 
-.day span {
-  opacity: 0.5;
-  font-size: 12px;
+.day-card:hover {
+  transform: translateY(-4px);
 }
 
-.day.locked {
+.day-card.locked {
   opacity: 0.4;
 }
 
-.day.final {
-  border: 1px solid #ff6a00;
+.day-card.final {
+  border: 2px solid #ff6a00;
+}
+
+.day-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.day-card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.day-card .links {
+  display: flex;
+  gap: 8px;
+}
+
+.day-card .links a {
+  text-decoration: none;
+  color: #ff6a00;
+  background: #1f1f1f;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.day-card.locked span {
+  color: #ff6a00;
+  font-size: 12px;
 }
 
 /* SOCIALS */
@@ -120,26 +210,63 @@ footer {
 
 
 #typing {
-  background: linear-gradient(90deg, #ff6a00, #ffb347);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--purple-color);
   border-right: 2px solid #ff6a00;
   padding-right: 6px;
   animation: blink 0.8s infinite;
 }
 
 @keyframes blink {
-  0%, 50% { border-color: transparent; }
-  100% { border-color: #ff6a00; }
-}
 
-/* DESKTOP */
-@media (min-width: 768px) {
-  .hero h1 {
-    font-size: 72px;
+  0%,
+  50% {
+    border-color: transparent;
   }
 
-  .days-list {
-    max-width: 600px;
+  100% {
+    border-color: #ff6a00;
+  }
+}
+
+@media (min-width: 640px) {
+  .days-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Orta ekran */
+@media (min-width: 768px) {
+  .days-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Böyük ekran */
+@media (min-width: 1024px) {
+  .days-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+/* 🖥 DESKTOP */
+@media (min-width: 768px) {
+  .hero-inner {
+    flex-direction: row;
+    /* SOLDAN SAĞA */
+    align-items: center;
+  }
+
+  .hero-content {
+    flex: 1;
+  }
+
+  .hero-visual {
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .hero-content h1 {
+    font-size: 56px;
   }
 }
