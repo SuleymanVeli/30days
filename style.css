@@ -15,7 +15,7 @@
   max-width: 1200px;
   /* 1100–1280 arası idealdır */
   margin: 0 auto;
-  padding: 0 70px;
+  padding: 0;
   /* mobile safe padding */
 }
 
@@ -229,6 +229,10 @@ footer {
 }
 
 @media (min-width: 640px) {
+  .container {
+    padding: 0 20px;
+  }
+
   .days-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -236,21 +240,10 @@ footer {
 
 /* Orta ekran */
 @media (min-width: 768px) {
-  .days-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .container {
+    padding: 0 40px;
   }
-}
 
-/* Böyük ekran */
-@media (min-width: 1024px) {
-  .days-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-
-/* 🖥 DESKTOP */
-@media (min-width: 768px) {
   .hero-inner {
     flex-direction: row;
     /* SOLDAN SAĞA */
@@ -269,4 +262,19 @@ footer {
   .hero-content h1 {
     font-size: 56px;
   }
+  .days-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Böyük ekran */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 70px;
+  }
+  .days-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+ 
 }
