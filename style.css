@@ -121,7 +121,8 @@ body {
 
 /* INFO */
 
-.info, .video{
+.info,
+.video {
   margin-top: 60px;
   margin-bottom: 60px;
   padding: 24px;
@@ -131,9 +132,7 @@ body {
   opacity: 0.75;
 }
 
-.info-highlight {
-  
-}
+.info-highlight {}
 
 
 
@@ -148,14 +147,24 @@ body {
 }
 
 .day-card {
-  aspect-ratio: 1 / 1;
-  /* əsas hissə */
-  background: #e5e7eb;
+  aspect-ratio: 1 / 1; 
+ 
+ 	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
   border-radius: 12px;
+  position: relative;
+}
+
+.day-number {
+  position: absolute;
+  font-weight: 600;
+  top: 14px;
+  right: 18px;
+  font-size: 14px;
+  color: var(--dark-purple-color);
 }
 
 .day-card:hover {
@@ -171,9 +180,33 @@ body {
 }
 
 .day-logo {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
+  width: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+}
+
+.day-code {
+  width: 25px;
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  opacity: 0.5;
+}
+
+.day-video {
+  width: 30px;
+  position: absolute;
+  top: 10px;
+  left: 54px;
+  opacity: 0.5;
+}
+
+.day-video img,
+.day-code img {
+  width: 100%;
 }
 
 .day-card h3 {
@@ -274,6 +307,7 @@ footer {
   .hero-content h1 {
     font-size: 56px;
   }
+
   .days-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -284,9 +318,10 @@ footer {
   .container {
     padding: 0 70px;
   }
+
   .days-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 
- 
+
 }
